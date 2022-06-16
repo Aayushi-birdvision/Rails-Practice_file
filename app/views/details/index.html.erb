@@ -2,6 +2,7 @@
 <table>
   <thead>
     <tr>
+      <th>ID</th>
       <th><p>Firstname</p></th>
       <th><p>Lastname</p></th>
       <th><p>Action</p></th>
@@ -10,9 +11,10 @@
   <tbody>
     <% @details.each do |detail| %>
     <tr>
-      <td><%=detail.Firstname%></td>
-      <td><%=detail.Lastname%></td>
-      <td><%= link_to 'Delete', detail_path(detail), method: :delete %></td>
+      <td><%=detail.id%></td>
+      <td><%=detail.first_name%></td>
+      <td><%=detail.last_name%></td>
+      <td><%= link_to 'Delete', detail_path(detail),  data: {confirm: 'Are you sure?'}, method: :delete %></td>
     </tr>
    <% end %>
   </tbody>
