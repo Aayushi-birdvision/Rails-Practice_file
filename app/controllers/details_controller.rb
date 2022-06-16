@@ -17,9 +17,9 @@ class DetailsController < ApplicationController
 
   def update
     @detail = Detail.find(params[:id])
-    if @detail.update(params.require(:detail).permit(:Firstname, :Lastname))
+    if @detail.update(params.require(:detail).permit(:first_name, :last_name))
       flash[:notice] ="Name was saved successfully!"
-      redirect_to detail
+      redirect_to @detail
     else
       render 'edit'
     end
@@ -32,7 +32,7 @@ class DetailsController < ApplicationController
   end
 
   def create
-    @detail = Detail.new(params.require(:detail).permit(:Firstname, :Lastname))
+    @detail = Detail.new(params.require(:detail).permit(:first_name, :last_name))
     if @detail.save
       flash[:notice] ="Name was saved successfully!"
       redirect_to detail_path(@detail)
