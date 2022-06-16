@@ -1,4 +1,4 @@
-<h1>Create a new name </h1>
+<h1>Edit name </h1>
 
 <% if @detail.errors.any? %>
   <h2>The following errors prevented the name from being saved.</h2>
@@ -12,16 +12,19 @@
 <%= form_with(model: @detail ,local: true) do |f|%>
 
 <p>
-  <%= f.label :Firstname%><br />
-  <%= f.text_field :Firstname%>
+  <%= f.label :first_name%><br />
+  <%= f.text_field :first_name%>
 </p>
 
 <p>
-  <%= f.label :Lastname %><br />
-  <%= f.text_field :Lastname %>
+  <%= f.label :last_name %><br />
+  <%= f.text_field :last_name %>
 </p>
 
 <p>
   <%= f.submit %>
 </p>
 <% end %>
+<p>
+  <%= link_to 'Cancel edit and return to Names', details_path%> |
+</p>

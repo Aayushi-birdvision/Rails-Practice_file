@@ -12,16 +12,17 @@
 <%= form_with scope: :detail, url: details_path, local: true do |f|%>
 
 <p>
-  <%= f.label :Firstname%><br />
-  <%= f.text_field :Firstname%>
+  <%= f.label :first_name%><br />
+  <%= f.text_field :first_name%>
 </p>
 
 <p>
-  <%= f.label :Lastname %><br />
-  <%= f.text_field :Lastname %>
+  <%= f.label :last_name %><br />
+  <%= f.text_field :last_name %>
 </p>
 
 <p>
   <%= f.submit %>
 </p>
 <% end %>
+<p><%= link_to 'Return to Names', details_path%> |</p>
